@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Environment files
+.env
+*.env
+!.env.example
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Documentation
+*.md
+!README.md
+
+# Notebooks
+notebooks/
+*.ipynb
+.ipynb_checkpoints/
+
+# Data (raw data not needed in production)
+Data-raw/
+Data-processed/
+Data_to_consider/
+References/
+TEST_Project/
+Docs/
+
+# Test files
+test.*
+*.test.py
+
+# Build files
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Render specific
+render.yaml
+build.sh
+app/Procfile
+app/Runtime.txt
+
+# Other
+New Plant Diseases Dataset(Augmented)/
+models/*.pkl.bak
