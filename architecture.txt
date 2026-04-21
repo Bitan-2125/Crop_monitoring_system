@@ -1,0 +1,45 @@
+2.7  High-Level System Architecture
+
+Our system comprises four major layers, as follows:
+
+Layer 1 - Presentation Layer (Frontend): This is the layer through which the farmer or user
+interacts with the Harvestify system. It collects user inputs via web forms such as soil NPK
+values, pH, rainfall, city name, plant leaf images, land size, budget, and season. Results are
+rendered back to the user as styled HTML pages showing predictions, charts, and recommendations.
+
+        Technology Used: HTML, CSS, JavaScript, Jinja2, Bootstrap, Font Awesome,
+        and custom static assets (style.css, cities.js).
+
+
+Layer 2 - Application Orchestration Layer (Backend): This layer manages the core objective
+of the project: seamlessly connecting the interactive frontend to backend models and external
+APIs. It defines all URL routes and request handlers for five core features — Crop
+Recommendation, Fertilizer Suggestion, Disease Detection, Market Price Insight, and Smart
+Crop Planning. It also handles PDF export, Hindi translation, and chart generation.
+
+        Technology Used: Python, Flask (app.py), Configuration module (config.py),
+        python-dotenv for environment variable management, Matplotlib for chart
+        generation, xhtml2pdf for PDF export, and Markdown for response formatting.
+
+
+Layer 3 - Predictive Layer (Local ML): This layer houses the trained machine learning and
+deep learning models that run entirely on the local server to ensure fast inference without
+external dependency. The crop recommendation model classifies the best crop based on soil
+and weather inputs. The disease detection model identifies plant diseases from leaf images
+with a confidence score derived from softmax probabilities.
+
+        Technology Used: PyTorch with a custom ResNet9 architecture (model.py) for
+        plant disease classification (plant_disease_model.pth), Scikit-Learn Random
+        Forest (RandomForest.pkl) for crop recommendation, NumPy and Pandas for
+        data preprocessing, and Pillow for image transformation.
+
+
+Layer 4 - Generative External API Layer (Web-RAG): This layer reaches out to external
+cloud services to fetch real-time data and generate contextual, grounded responses that
+enrich the outputs of the local models. It powers the Market Price Insight and Smart Crop
+Planning features by combining live web search results with LLM-generated analysis.
+
+        Technology Used: Groq API (Llama-3.3-70b-versatile for text generation and
+        translation, meta-llama/llama-4-scout for vision analysis), Tavily Search API
+        for real-time web retrieval (Web-RAG), and OpenWeather API for live
+        temperature and humidity data used in crop recommendation.

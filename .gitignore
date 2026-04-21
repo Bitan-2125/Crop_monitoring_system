@@ -1,0 +1,34 @@
+Data_to_consider/
+References/
+TEST_Project/
+.ipynb_checkpoints/
+.vscode/
+__pycache__/
+New Plant Diseases Dataset(Augmented)/
+Docs/
+.DS_Store
+
+# Environment variables
+.env
+*.env
+
+# Python
+venv/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Flask
+instance/
+.webassets-cache
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+app/.env
