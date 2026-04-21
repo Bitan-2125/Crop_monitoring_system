@@ -66,7 +66,7 @@ On any result page, click "हिंदी में देखें" to transla
 
 1. Clone the repository
    ```
-   git clone https://github.com/Gladiator07/Harvestify.git
+   git clone https://github.com/Bitan-2125/Crop_monitoring_system
    cd Harvestify/app
    ```
 
